@@ -16,6 +16,16 @@ public class Random {
 		else
 			return min + r.nextInt(max - min);
 	}
+	
+	public double random(double min, double max) {
+		
+		if(min > max)
+			throw new IllegalArgumentException("Maximun is less than minimun.");
+		else if(min == max)
+			return min;
+		else
+			return min + (max - min) * r.nextDouble();
+	}
 
 	public boolean nextBoolean() throws InterruptedException{
 		return r.nextBoolean();
@@ -28,7 +38,7 @@ public class Random {
 	public double nextDouble() throws InterruptedException{
 		return r.nextDouble();
 	}
-	
+		
 	public float nextFloat() throws InterruptedException{
 		return r.nextFloat();
 	}
